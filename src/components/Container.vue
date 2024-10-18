@@ -1,5 +1,5 @@
 <template>
-    <div v-if="step === 0"><Post :post="Posts[idx]" v-for="(post, idx) in posts" :key="post" /></div>
+    <div v-if="step === 0"><Post :selectFilter="selectFilter" :post="Posts[idx]" v-for="(post, idx) in posts" :key="post" /></div>
 
     <!-- 필터선택페이지 -->
     <div v-if="step === 1">
@@ -11,7 +11,7 @@
 
     <!-- 글작성페이지 -->
     <div v-if="step === 2">
-        <div class="upload-image" :style="{ backgroundImage: `url(${imgUrl})` }"></div>
+        <div class="upload-image" :class="selectFilter" :style="{ backgroundImage: `url(${imgUrl})` }"></div>
         <div class="write">
             <textarea @input="$emit('write', $event.target.value)" class="write-box">write!</textarea>
         </div>
