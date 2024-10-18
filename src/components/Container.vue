@@ -55,24 +55,24 @@ export default {
                 "willow",
                 "xpro2",
             ],
-            selectFilter: "",
+            // selectFilter: "",
         };
     },
     props: {
         posts: Array,
         step: Number,
         imgUrl: String,
+        selectFilter: String,
     },
     components: {
         Post,
         FilterBox,
     },
-    mounted() {
-        this.emitter.on("filter", (data) => {
-            this.selectFilter = data;
-            console.log(this.selectFilter);
-        });
-    },
+    // mounted() {
+    //     this.emitter.on("filter", (data) => {
+    //         this.selectFilter = data;
+    //     });
+    // },
 };
 </script>
 

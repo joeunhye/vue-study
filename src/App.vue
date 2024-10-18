@@ -10,7 +10,7 @@
         <img src="./assets/logo.png" class="logo" />
     </div>
 
-    <container :posts="Posts" :step="step" :imgUrl="imgUrl" @write="writeContent = $event" />
+    <container :selectFilter="selectFilter" :posts="Posts" :step="step" :imgUrl="imgUrl" @write="writeContent = $event" />
     <button @click="more" class="more">더보기</button>
 
     <div class="footer">
@@ -43,14 +43,14 @@ export default {
             step: 0,
             imgUrl: "",
             writeContent: "",
-            // selectFilter: "",
+            selectFilter: "",
         };
     },
-    // mounted() {
-    //     this.emitter.on("filter", (data) => {
-    //         this.selectFilter = data;
-    //     });
-    // },
+    mounted() {
+        this.emitter.on("filter", (data) => {
+            this.selectFilter = data;
+        });
+    },
     methods: {
         more() {
             axios.get(`https://codingapple1.github.io/vue/more${this.moreNum}.json`).then((result) => {
