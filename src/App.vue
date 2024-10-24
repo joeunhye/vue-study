@@ -9,6 +9,9 @@
         </ul>
         <img src="./assets/logo.png" class="logo" />
     </div>
+    <h5>안녕😁🖐 {{ $store.state.name }} ({{ $store.state.age }})</h5>
+    <button @click="$store.commit('changeName')">Change Name</button>
+    <button @click="$store.commit('changeAge', 10)">Change Age</button>
 
     <container :selectFilter="selectFilter" :posts="Posts" :step="step" :imgUrl="imgUrl" @write="writeContent = $event" />
     <button @click="more" class="more">더보기</button>

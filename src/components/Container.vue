@@ -55,7 +55,6 @@ export default {
                 "willow",
                 "xpro2",
             ],
-            // selectFilter: "",
         };
     },
     props: {
